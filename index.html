@@ -1,1 +1,1640 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="shortcut icon" href="./favicon.ico"/><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/><meta http-equiv="Pragma" content="no-cache"/><meta http-equiv="Expires" content="0"/><meta http-equiv="Content-Security-Policy" content="navigate-to 'none'"/><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/><meta name="theme-color" content="#000000"/><title>Office Scripts</title><script>var url=window.location.href,isLocal=0===url.indexOf("https://localhost:3003/");window.OsfOptOut=isLocal,window.useAssociatedActionsOnly=!0</script><style>*,::after,::before{padding:0;margin:0;-webkit-box-sizing:inherit;box-sizing:inherit}html{font-size:62.5%}body{font-family:"Segoe UI Web (Arabic)","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif!important;color:#323b3a;font-size:14px;-webkit-box-sizing:border-box;box-sizing:border-box;overscroll-behavior-y:none;background-color:#fff;overflow:hidden}#loadingWrapper{background:#f5f5f5;width:100%;height:100%;position:absolute}#loading{position:absolute;z-index:2000000;color:#212121;background:#f5f5f5;height:100%;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}#loading>img{height:120px;margin-bottom:15px}#loading>h1{color:#666;margin-top:10px;margin-bottom:10px;margin-left:8px}#loading>h2{color:#999;max-width:250px;text-align:center}#loading>a{color:#999!important;margin-top:10px}@media only screen and (max-width:500px){#loading>pre{padding:0 30px}}#loading>.loading-indicator{-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;border:2px solid #9fcdb3;border-top:2px solid #217346;border-radius:50%;width:30px;height:30px;animation:loading-animation 1s linear infinite}@-webkit-keyframes loading-animation{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes loading-animation{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}#errorRoot{height:100%;width:100%;display:block;padding:0 1.6rem 1.6rem;background:#f5f5f5;height:100vh;min-height:100vh;width:100%;display:flex;flex-direction:column}#errorRoot label{display:block;padding-top:5px;padding-bottom:5px}#errorRoot #errorHeader{font-size:15px;font-weight:600}#errorRoot #errorDescription{font-size:12px}#errorRoot #errorFooter{font-size:12px}#errorRoot .endJustifiedFlexWrapper{width:100%;display:flex;justify-content:flex-end}#errorRoot button{background-color:#217346;color:#fff;font-size:12px;font-weight:600;min-width:80px;height:2.6rem;border-color:transparent;outline:transparent;border-width:1px;border-radius:2px;margin-top:2.4rem}#errorRoot button:hover{background-color:#0f522d}#errorRoot button:active{background-color:#084121}#errorRoot pre{font-size:100%;color:#999;margin-top:10px;max-height:50%;max-width:100%;padding:0 80px;word-break:break-all;white-space:pre-wrap;overflow-y:auto}</style><script>!function(){"use strict";var e={},t={};function r(n){var c=t[n];if(void 0!==c)return c.exports;var a=t[n]={id:n,loaded:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.loaded=!0,a.exports}r.m=e,r.amdO={},function(){var e=[];r.O=function(t,n,c,a){if(!n){var o=1/0;for(u=0;u<e.length;u++){n=e[u][0],c=e[u][1],a=e[u][2];for(var f=!0,d=0;d<n.length;d++)(!1&a||o>=a)&&Object.keys(r.O).every((function(e){return r.O[e](n[d])}))?n.splice(d--,1):(f=!1,a<o&&(o=a));if(f){e.splice(u--,1);var i=c();void 0!==i&&(t=i)}}return t}a=a||0;for(var u=e.length;u>0&&e[u-1][2]>a;u--)e[u]=e[u-1];e[u]=[n,c,a]}}(),r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,{a:t}),t},function(){var e,t=Object.getPrototypeOf?function(e){return Object.getPrototypeOf(e)}:function(e){return e.__proto__};r.t=function(n,c){if(1&c&&(n=this(n)),8&c)return n;if("object"==typeof n&&n){if(4&c&&n.__esModule)return n;if(16&c&&"function"==typeof n.then)return n}var a=Object.create(null);r.r(a);var o={};e=e||[null,t({}),t([]),t(t)];for(var f=2&c&&n;"object"==typeof f&&!~e.indexOf(f);f=t(f))Object.getOwnPropertyNames(f).forEach((function(e){o[e]=function(){return n[e]}}));return o.default=function(){return n},r.d(a,o),a}}(),r.d=function(e,t){for(var n in t)r.o(t,n)&&!r.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},r.f={},r.e=function(e){return Promise.all(Object.keys(r.f).reduce((function(t,n){return r.f[n](e,t),t}),[]))},r.u=function(e){return 2037===e?"2037.2aed3793.js":4312===e?"4312.3997f629.js":4992===e?"4992.c6f13f69.js":2265===e?"2265.a257615d.js":908===e?"908.94211863.js":({1189:"editor",1239:"office.script.synchronous.library",1854:"LocalStorageUsers",1875:"run-from-button",2245:"notfound",2443:"about",3456:"office.script.synchronous.intellisense.batch",4827:"power-automate",5230:"LocalStorageWorkbook",5781:"LocalStorageVersion",6325:"office.script.sync",7538:"recorder",7690:"office.script.synchronous.intellisense.types",7858:"office.script.synchronous.intellisense.synchronous",9455:"LocalStorageAdmin",9889:"LocalStorageConsent"}[e]||e)+"."+{52:"522c214a",59:"fa5c8280",127:"06086d0f",140:"595db0fd",160:"5f3b5be2",246:"e74e342a",286:"39bbdfb3",409:"7d9f2121",481:"41668e97",802:"50f9e934",807:"7837aa7e",808:"7799172c",899:"95f7eeb2",972:"3378ed06",1008:"2d204c79",1026:"4bfe4fe9",1091:"a42960a8",1136:"37cb1f4a",1176:"ebf74e58",1189:"def92804",1206:"d75bd1e1",1238:"b20271f1",1239:"348a96e9",1325:"addd6488",1339:"966c9162",1370:"97229a73",1554:"d42c9050",1593:"cd386193",1621:"e8106db9",1636:"2dc8845b",1794:"e20131dc",1805:"8199a4a6",1842:"f8b3e558",1854:"81bfddf0",1866:"fe666c47",1875:"32f47dcd",1906:"7265a4df",1922:"1b7a1a74",2009:"da16f742",2125:"f08d965c",2126:"201ad43f",2137:"097479a4",2218:"7d9d5a28",2245:"2a04166c",2246:"6f3ca581",2285:"1471b643",2294:"2f845c7d",2390:"8e3283d5",2396:"8e5b0878",2409:"f9ee541c",2440:"c92324be",2443:"0cc07ca5",2478:"df9548a0",2492:"27b34f8a",2531:"cdbdf6ac",2566:"03cdf04f",2634:"95d503d3",2655:"d5f7a6f5",2714:"782ca330",2787:"bd35031c",2921:"42fe1a46",2934:"58effab8",2971:"d979b046",3064:"cac800ab",3068:"7fe14e56",3076:"c84a115a",3105:"90da58af",3222:"271fcb73",3226:"007d8f45",3316:"c8f5d763",3452:"ad8f7231",3456:"547037f9",3610:"f8d51af6",3637:"25a89f10",3668:"4a2b49e1",3847:"5cf0ca5f",3912:"ae279e99",3965:"e9e1aab0",3996:"9f80118a",4050:"ac184419",4126:"ec09a535",4151:"0f01ab7a",4424:"f92cb29e",4432:"6a2ce381",4438:"0cc7dee1",4502:"4ebeb30f",4512:"f714fd0e",4577:"58aa6f58",4581:"b639bf22",4811:"26e7ed8c",4827:"01ddaf8e",4840:"b1b40908",4852:"2372ea43",4936:"64f38b6a",5108:"248746e4",5210:"fd951716",5230:"7dfa9a7a",5247:"ae6ca530",5337:"543cdca4",5413:"be16a412",5446:"a834b714",5477:"8497f8d8",5537:"a2f95947",5571:"63654301",5679:"02947f3a",5734:"757515f8",5758:"a6410c26",5781:"cea7c016",5936:"fe93303a",5945:"1ada7c6b",5946:"e722fe74",6098:"1f47675d",6106:"6918374a",6131:"f67f73fc",6203:"8c5be71b",6325:"0d659c4f",6332:"426152a2",6354:"e77d1242",6358:"038ccf54",6479:"edea228f",6498:"339ee3c2",6542:"d3ebd256",6543:"240f686a",6550:"fb60f4b5",6553:"5f245a66",6645:"2e6081dc",6733:"8e1d5511",6813:"852933b3",7e3:"f65ea087",7085:"acd59e8b",7096:"28826e47",7159:"7efc1018",7192:"cf3045b9",7251:"b2bfe5df",7337:"d2dfa65f",7339:"43a3099d",7351:"45ed7830",7361:"71aa95bc",7366:"cb062f1a",7423:"7c087a19",7482:"ddf077fe",7538:"8a9c1e5e",7539:"6d917db6",7555:"56e7ffd5",7566:"b0fe658a",7613:"06048b95",7623:"276839b3",7633:"40416219",7690:"3d5896d3",7728:"975adaf4",7789:"a8875a19",7790:"3e644932",7792:"3f3928b9",7808:"60e0f960",7823:"f7885765",7858:"5e6bcea6",7902:"84b13d50",7905:"019fe202",7913:"5ec81631",7978:"b101c7d6",7979:"f11c31b9",7983:"bc21cb0e",8006:"5d6de0c8",8024:"a8ada1b5",8101:"2d97d544",8111:"bcab936f",8236:"622beae9",8257:"0fee5ace",8305:"9dfbce3f",8344:"c4d873a9",8509:"4cc9a449",8514:"7355176b",8555:"2c7a2c51",8642:"daccf32a",8675:"e5affad4",8779:"12ec32ae",8846:"1a45fd6c",8847:"1720d354",8854:"5ab09b16",8857:"41fd1655",8886:"31840ca3",8894:"40e328ba",9033:"2637d734",9034:"cce4a6b4",9097:"a97c80bc",9198:"1563b5d2",9218:"175b8613",9384:"6b2951ef",9455:"31c17f64",9460:"a971b359",9517:"dcf76f9f",9537:"845ef0b5",9681:"898bc2e9",9690:"df18c6cb",9753:"74964aef",9830:"e66c8b77",9888:"8199722d",9889:"ee8682e2",9914:"981ad418",9935:"22020a92"}[e]+".chunk.js"},r.miniCssF=function(e){return"static/css/"+e+".bf36586c.chunk.css"},r.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),r.hmd=function(e){return(e=Object.create(e)).children||(e.children=[]),Object.defineProperty(e,"exports",{enumerable:!0,set:function(){throw new Error("ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: "+e.id)}}),e},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},function(){var e={},t="maker-code-editor:";r.l=function(n,c,a,o){if(e[n])e[n].push(c);else{var f,d;if(void 0!==a)for(var i=document.getElementsByTagName("script"),u=0;u<i.length;u++){var b=i[u];if(b.getAttribute("src")==n||b.getAttribute("data-webpack")==t+a){f=b;break}}f||(d=!0,(f=document.createElement("script")).charset="utf-8",f.timeout=120,r.nc&&f.setAttribute("nonce",r.nc),f.setAttribute("data-webpack",t+a),f.src=r.tu(n)),e[n]=[c];var s=function(t,r){f.onerror=f.onload=null,clearTimeout(l);var c=e[n];if(delete e[n],f.parentNode&&f.parentNode.removeChild(f),c&&c.forEach((function(e){return e(r)})),t)return t(r)},l=setTimeout(s.bind(null,void 0,{type:"timeout",target:f}),12e4);f.onerror=s.bind(null,f.onerror),f.onload=s.bind(null,f.onload),d&&document.head.appendChild(f)}}}(),r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},function(){var e;r.tt=function(){if(void 0===e&&(e={createScriptURL:function(e){return e}},"undefined"!=typeof trustedTypes&&trustedTypes.createPolicy))try{e=trustedTypes.createPolicy("script-url#webpack",e)}catch(e){console.warn('Could not create trusted-types policy "script-url#webpack"')}return e}}(),r.tu=function(e){return r.tt().createScriptURL(e)},r.p="./",function(){var e=function(e){return new Promise((function(t,n){var c=r.miniCssF(e),a=r.p+c;if(function(e,t){for(var r=document.getElementsByTagName("link"),n=0;n<r.length;n++){var c=(o=r[n]).getAttribute("data-href")||o.getAttribute("href");if("stylesheet"===o.rel&&(c===e||c===t))return o}var a=document.getElementsByTagName("style");for(n=0;n<a.length;n++){var o;if((c=(o=a[n]).getAttribute("data-href"))===e||c===t)return o}}(c,a))return t();!function(e,t,r,n){var c=document.createElement("link");c.rel="stylesheet",c.type="text/css",c.onerror=c.onload=function(a){if(c.onerror=c.onload=null,"load"===a.type)r();else{var o=a&&("load"===a.type?"missing":a.type),f=a&&a.target&&a.target.href||t,d=new Error("Loading CSS chunk "+e+" failed.\n("+f+")");d.code="CSS_CHUNK_LOAD_FAILED",d.type=o,d.request=f,c.parentNode.removeChild(c),n(d)}},c.href=t,document.head.appendChild(c)}(e,a,t,n)}))},t={7252:0};r.f.miniCss=function(r,n){t[r]?n.push(t[r]):0!==t[r]&&{3637:1}[r]&&n.push(t[r]=e(r).then((function(){t[r]=0}),(function(e){throw delete t[r],e})))}}(),function(){r.b=document.baseURI||self.location.href;var e={7252:0};r.f.j=function(t,n){var c=r.o(e,t)?e[t]:void 0;if(0!==c)if(c)n.push(c[2]);else if(7252!=t){var a=new Promise((function(r,n){c=e[t]=[r,n]}));n.push(c[2]=a);var o=r.p+r.u(t),f=new Error;r.l(o,(function(n){if(r.o(e,t)&&(0!==(c=e[t])&&(e[t]=void 0),c)){var a=n&&("load"===n.type?"missing":n.type),o=n&&n.target&&n.target.src;f.message="Loading chunk "+t+" failed.\n("+a+": "+o+")",f.name="ChunkLoadError",f.type=a,f.request=o,c[1](f)}}),"chunk-"+t,t)}else e[t]=0},r.O.j=function(t){return 0===e[t]};var t=function(t,n){var c,a,o=n[0],f=n[1],d=n[2],i=0;if(o.some((function(t){return 0!==e[t]}))){for(c in f)r.o(f,c)&&(r.m[c]=f[c]);if(d)var u=d(r)}for(t&&t(n);i<o.length;i++)a=o[i],r.o(e,a)&&e[a]&&e[a][0](),e[a]=0;return r.O(u)},n=self.webpackChunkmaker_code_editor=self.webpackChunkmaker_code_editor||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}(),r.nc=void 0}()</script><script defer="defer" src="./3893.fc94c056.js"></script><script defer="defer" src="./7240.592504f9.js"></script><script defer="defer" src="./6578.e78a75d9.js"></script><script defer="defer" src="./4985.edccdf7d.js"></script><script defer="defer" src="./7607.892dcfde.js"></script><script defer="defer" src="./main.c04e27f6.js"></script><link href="./static/css/main.0358920e.css" rel="stylesheet"></head><body class="ms-Fabric"><noscript>You need to enable JavaScript to enable this functionality.</noscript><div id="errorRoot" style="display:none"><label id="errorHeader" class="ms-label">Error</label> <label id="errorDescription" class="ms-label">An unexpected error occurred.</label> <button id="feedbackButton" style="display:none" class="ms-button" onclick='OfficeFirstParty.UserFeedback.CollectUserFeedback(3,1,"Extensibility\\Office Scripts",{})'><label id="feedBackText"></label></button> <label id="errorFooter" class="ms-label"></label><div class="endJustifiedFlexWrapper"><button id="refreshButton" class="ms-button" onclick="location.reload(!0)">Refresh</button></div></div><div id="loadingWrapper"><div id="loading" style="visibility:hidden"><div class="loading-indicator"></div><h2 class="ms-font-m"></h2></div></div><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becoming Virtuous: The Aristotelian Journey</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-aristotle { background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%); }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus visible */
+        .focus-visible:focus {
+            outline: 3px solid #fbbf24;
+            outline-offset: 2px;
+        }
+        
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Slider custom styles */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            outline: none;
+            background: linear-gradient(to right, #ef4444 0%, #fbbf24 50%, #22c55e 100%);
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: none;
+        }
+        
+        input[type="range"]:focus::-webkit-slider-thumb {
+            outline: 3px solid #fbbf24;
+            outline-offset: 2px;
+        }
+        
+        input[type="range"]:focus::-moz-range-thumb {
+            outline: 3px solid #fbbf24;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="root"></div>
+    <div id="announcements" role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        // Announce to screen readers
+        const announce = (message) => {
+            const announcer = document.getElementById('announcements');
+            if (announcer) {
+                announcer.textContent = message;
+                setTimeout(() => { announcer.textContent = ''; }, 1000);
+            }
+        };
+
+        // Generate session ID
+        const generateSessionId = () => {
+            const date = new Date();
+            const dateStr = date.toISOString().slice(0,10).replace(/-/g, '');
+            const timeStr = date.toTimeString().slice(0,5).replace(/:/g, '');
+            const random = Math.random().toString(36).substring(2, 8).toUpperCase();
+            return `ARISTOTLE-${dateStr}-${timeStr}-${random}`;
+        };
+
+        // Virtue database
+        const VIRTUES = {
+            courage: {
+                name: "Courage",
+                excess: "Recklessness",
+                deficiency: "Cowardice",
+                mean: "Appropriate fear and confidence",
+                description: "Facing appropriate dangers for good ends with the right amount of fear",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "You see someone being harassed on public transit. The harasser is aggressive and unpredictable.",
+                        excess: "You immediately confront them physically without assessing the danger",
+                        mean: "You assess the situation, call for help, and intervene in a way that protects everyone",
+                        deficiency: "You look away and do nothing despite being able to help safely"
+                    },
+                    {
+                        id: 2,
+                        situation: "Your friend group is about to do something risky and possibly illegal.",
+                        excess: "You join in without thinking about consequences",
+                        mean: "You speak up about your concerns despite social pressure",
+                        deficiency: "You stay silent even though you know it's wrong"
+                    }
+                ]
+            },
+            temperance: {
+                name: "Temperance",
+                excess: "Insensibility/Asceticism",
+                deficiency: "Self-Indulgence",
+                mean: "Moderate enjoyment of pleasures",
+                description: "Enjoying bodily pleasures appropriately without being controlled by appetite",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "You're at a party with free food and drinks. You've had a stressful week.",
+                        excess: "You completely deny yourself any pleasure, making others uncomfortable with your rigidity",
+                        mean: "You enjoy food and conversation moderately, staying present and in control",
+                        deficiency: "You overindulge until you're sick or impaired"
+                    },
+                    {
+                        id: 2,
+                        situation: "You have access to unlimited streaming entertainment while working from home.",
+                        excess: "You never watch anything, working constantly without rest or enjoyment",
+                        mean: "You watch shows as planned breaks, maintaining work-life balance",
+                        deficiency: "You binge-watch constantly, neglecting work and relationships"
+                    }
+                ]
+            },
+            generosity: {
+                name: "Generosity",
+                excess: "Prodigality/Wastefulness",
+                deficiency: "Stinginess",
+                mean: "Giving appropriately to worthy recipients",
+                description: "Giving the right amount to the right people at the right time for the right reasons",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "A friend asks to borrow money. You know they struggle with budgeting.",
+                        excess: "You give them everything they ask for without considering if it helps long-term",
+                        mean: "You help in a way that addresses their actual needs, perhaps offering budgeting help",
+                        deficiency: "You refuse to help despite being able to and them genuinely needing it"
+                    },
+                    {
+                        id: 2,
+                        situation: "You see multiple donation requests from various causes you care about.",
+                        excess: "You donate beyond your means, putting yourself in financial jeopardy",
+                        mean: "You give thoughtfully within your means to causes you've researched",
+                        deficiency: "You never donate despite having resources to spare"
+                    }
+                ]
+            },
+            honesty: {
+                name: "Honesty/Truthfulness",
+                excess: "Brutal Honesty/Tactlessness",
+                deficiency: "Dishonesty/False Modesty",
+                mean: "Speaking truth appropriately",
+                description: "Being truthful about yourself and others in ways that respect dignity",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "Your friend asks if you like their new outfit. You don't.",
+                        excess: "You bluntly tell them it looks terrible and list everything wrong with it",
+                        mean: "You're honest but kind, perhaps redirecting to what would suit them better",
+                        deficiency: "You enthusiastically lie, reinforcing choices that don't serve them"
+                    },
+                    {
+                        id: 2,
+                        situation: "In a job interview, they ask about your weaknesses.",
+                        excess: "You overshare every flaw and mistake, undermining your candidacy",
+                        mean: "You honestly discuss areas you're working to improve with examples of growth",
+                        deficiency: "You claim to have no weaknesses or disguise strengths as weaknesses"
+                    }
+                ]
+            },
+            justice: {
+                name: "Justice/Fairness",
+                excess: "Rigid Legalism",
+                deficiency: "Favoritism/Bias",
+                mean: "Giving each person their due",
+                description: "Treating people fairly according to merit, need, and circumstance",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "Two students submit late work. One had a family emergency, the other was just disorganized.",
+                        excess: "You apply the late policy absolutely equally regardless of circumstances",
+                        mean: "You consider context while maintaining standards, being fair to all students",
+                        deficiency: "You arbitrarily accept one and reject the other based on personal preference"
+                    },
+                    {
+                        id: 2,
+                        situation: "You're dividing household chores among roommates.",
+                        excess: "You insist on exact mathematical equality even when someone works more hours",
+                        mean: "You distribute fairly considering everyone's circumstances and capabilities",
+                        deficiency: "You let your friends do less because you like them more"
+                    }
+                ]
+            },
+            friendliness: {
+                name: "Friendliness",
+                excess: "Obsequiousness/People-Pleasing",
+                deficiency: "Surliness/Rudeness",
+                mean: "Appropriate warmth and boundaries",
+                description: "Being pleasant in social interactions without excessive flattery or coldness",
+                scenarios: [
+                    {
+                        id: 1,
+                        situation: "A coworker constantly asks you to cover their shifts.",
+                        excess: "You always say yes, never setting boundaries, becoming resentful",
+                        mean: "You help when genuinely able but kindly decline when you can't",
+                        deficiency: "You're consistently cold and dismissive, damaging workplace relationships"
+                    },
+                    {
+                        id: 2,
+                        situation: "Someone shares an idea you disagree with in a group discussion.",
+                        excess: "You effusively praise it despite thinking it's flawed, avoiding any critique",
+                        mean: "You engage respectfully, acknowledging merits while raising concerns",
+                        deficiency: "You rudely dismiss it without consideration, shutting down dialogue"
+                    }
+                ]
+            }
+        };
+
+        // Main App Component
+        function App() {
+            const [studentInfo, setStudentInfo] = useState({ name: '', email: '', course: '' });
+            const [hasStarted, setHasStarted] = useState(false);
+            const [currentPhase, setCurrentPhase] = useState(1);
+            const [sessionData, setSessionData] = useState(null);
+            const [phaseProgress, setPhaseProgress] = useState({});
+            const [virtueData, setVirtueData] = useState({
+                chosenVirtue: null,
+                habituation: [],
+                meanFindings: {},
+                phronesisScenarios: []
+            });
+
+            const mainContentRef = useRef(null);
+
+            // Load progress
+            useEffect(() => {
+                const saved = localStorage.getItem('aristotleProgress');
+                if (saved) {
+                    try {
+                        const data = JSON.parse(saved);
+                        if (data.hasStarted) {
+                            setHasStarted(true);
+                            setStudentInfo(data.studentInfo || {});
+                            setCurrentPhase(data.currentPhase || 1);
+                            setSessionData(data.sessionData || null);
+                            setPhaseProgress(data.phaseProgress || {});
+                            setVirtueData(data.virtueData || { chosenVirtue: null, habituation: [], meanFindings: {}, phronesisScenarios: [] });
+                        }
+                    } catch (e) {
+                        console.error('Error loading progress:', e);
+                    }
+                }
+            }, []);
+
+            // Save progress
+            useEffect(() => {
+                if (hasStarted) {
+                    localStorage.setItem('aristotleProgress', JSON.stringify({
+                        hasStarted,
+                        studentInfo,
+                        currentPhase,
+                        sessionData,
+                        phaseProgress,
+                        virtueData
+                    }));
+                }
+            }, [hasStarted, studentInfo, currentPhase, sessionData, phaseProgress, virtueData]);
+
+            const startModule = (info) => {
+                const session = {
+                    sessionId: generateSessionId(),
+                    startTime: new Date().toISOString()
+                };
+                setStudentInfo(info);
+                setSessionData(session);
+                setHasStarted(true);
+                
+                const initialProgress = {};
+                for (let i = 1; i <= 5; i++) {
+                    initialProgress[i] = {
+                        started: i === 1,
+                        completed: false,
+                        startTime: i === 1 ? new Date().toISOString() : null
+                    };
+                }
+                setPhaseProgress(initialProgress);
+                
+                announce('Module started. Welcome to the Aristotelian Journey.');
+            };
+
+            const navigateToPhase = (phaseNum) => {
+                if (phaseProgress[currentPhase]?.startTime && !phaseProgress[currentPhase]?.completed) {
+                    const startTime = new Date(phaseProgress[currentPhase].startTime);
+                    const now = new Date();
+                    const timeSpent = Math.round((now - startTime) / 60000);
+                    
+                    setPhaseProgress(prev => ({
+                        ...prev,
+                        [currentPhase]: {
+                            ...prev[currentPhase],
+                            completed: true,
+                            endTime: now.toISOString(),
+                            timeSpent
+                        }
+                    }));
+                }
+
+                if (!phaseProgress[phaseNum]?.started) {
+                    setPhaseProgress(prev => ({
+                        ...prev,
+                        [phaseNum]: {
+                            ...prev[phaseNum],
+                            started: true,
+                            startTime: new Date().toISOString()
+                        }
+                    }));
+                }
+
+                setCurrentPhase(phaseNum);
+                
+                // Focus management
+                setTimeout(() => {
+                    const heading = mainContentRef.current?.querySelector('h2, h1');
+                    if (heading) {
+                        heading.tabIndex = -1;
+                        heading.focus();
+                        heading.removeAttribute('tabindex');
+                    }
+                }, 100);
+                
+                const phaseNames = ['Understanding', 'Mean Finder', 'Virtue Development', 'Phronesis Practice', 'Your Plan'];
+                announce(`Navigated to Phase ${phaseNum}: ${phaseNames[phaseNum - 1]}`);
+            };
+
+            const calculateProgress = () => {
+                const total = 5;
+                const completed = Object.values(phaseProgress).filter(p => p.completed).length;
+                return Math.round((completed / total) * 100);
+            };
+
+            if (!hasStarted) {
+                return <WelcomeScreen onStart={startModule} />;
+            }
+
+            const phases = [
+                { num: 1, name: 'Understanding the System', icon: '📚', time: '8 min' },
+                { num: 2, name: 'The Mean Finder', icon: '⚖️', time: '8 min' },
+                { num: 3, name: 'Virtue Development', icon: '🌱', time: '12 min' },
+                { num: 4, name: 'Phronesis Practice', icon: '🧠', time: '8 min' },
+                { num: 5, name: 'Your Virtue Plan', icon: '📋', time: '6 min' }
+            ];
+
+            const progress = calculateProgress();
+
+            return (
+                <div className="min-h-screen">
+                    <header className="gradient-aristotle text-white shadow-lg" role="banner">
+                        <div className="max-w-7xl mx-auto px-4 py-6">
+                            <h1 className="text-3xl font-bold mb-2">Becoming Virtuous: The Aristotelian Journey</h1>
+                            <p className="text-lg opacity-90">Understanding Virtue Ethics Through Experience</p>
+                            <div 
+                                className="mt-4 bg-white/20 rounded-full h-2"
+                                role="progressbar"
+                                aria-label="Module completion progress"
+                                aria-valuenow={progress}
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                            >
+                                <div className="bg-white h-full transition-all" style={{ width: `${progress}%` }}></div>
+                            </div>
+                            <p className="text-sm mt-2 opacity-80">{progress}% Complete</p>
+                        </div>
+                    </header>
+
+                    <nav className="bg-white shadow-sm sticky top-0 z-50" role="navigation" aria-label="Phase navigation">
+                        <div className="max-w-7xl mx-auto px-4">
+                            <div className="flex overflow-x-auto py-4 space-x-2">
+                                {phases.map(phase => {
+                                    const isCurrent = currentPhase === phase.num;
+                                    const isCompleted = phaseProgress[phase.num]?.completed;
+                                    
+                                    return (
+                                        <button
+                                            key={phase.num}
+                                            onClick={() => navigateToPhase(phase.num)}
+                                            className={`focus-visible flex items-center space-x-2 px-4 py-2 rounded-lg whitespace-nowrap transition-all ${
+                                                isCurrent ? 'bg-blue-100 text-blue-700 font-semibold' : 'hover:bg-gray-100'
+                                            }`}
+                                            aria-label={`Phase ${phase.num}: ${phase.name}, ${phase.time}${isCompleted ? ', completed' : ''}${isCurrent ? ', current phase' : ''}`}
+                                            aria-current={isCurrent ? 'page' : undefined}
+                                        >
+                                            <span className="text-xl" aria-hidden="true">{phase.icon}</span>
+                                            <div className="text-left">
+                                                <div>{phase.name}</div>
+                                                <div className="text-xs opacity-75">{phase.time}</div>
+                                            </div>
+                                            {isCompleted && <span aria-label="completed">✓</span>}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </nav>
+
+                    <main id="main-content" className="max-w-7xl mx-auto px-4 py-8" ref={mainContentRef} role="main">
+                        <div className="fade-in">
+                            {currentPhase === 1 && (
+                                <Phase1Understanding onNext={() => navigateToPhase(2)} />
+                            )}
+                            {currentPhase === 2 && (
+                                <Phase2MeanFinder 
+                                    virtueData={virtueData}
+                                    setVirtueData={setVirtueData}
+                                    onNext={() => navigateToPhase(3)}
+                                    onBack={() => navigateToPhase(1)}
+                                />
+                            )}
+                            {currentPhase === 3 && (
+                                <Phase3VirtueDevelopment 
+                                    virtueData={virtueData}
+                                    setVirtueData={setVirtueData}
+                                    onNext={() => navigateToPhase(4)}
+                                    onBack={() => navigateToPhase(2)}
+                                />
+                            )}
+                            {currentPhase === 4 && (
+                                <Phase4Phronesis 
+                                    virtueData={virtueData}
+                                    setVirtueData={setVirtueData}
+                                    onNext={() => navigateToPhase(5)}
+                                    onBack={() => navigateToPhase(3)}
+                                />
+                            )}
+                            {currentPhase === 5 && (
+                                <Phase5PersonalPlan 
+                                    studentInfo={studentInfo}
+                                    sessionData={sessionData}
+                                    virtueData={virtueData}
+                                    phaseProgress={phaseProgress}
+                                    onBack={() => navigateToPhase(4)}
+                                />
+                            )}
+                        </div>
+                    </main>
+                </div>
+            );
+        }
+
+        // Welcome Screen Component
+        function WelcomeScreen({ onStart }) {
+            const [formData, setFormData] = useState({ name: '', email: '', course: '' });
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (formData.name && formData.email && formData.course) {
+                    onStart(formData);
+                }
+            };
+
+            return (
+                <div className="min-h-screen gradient-aristotle py-12 px-4">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="bg-white rounded-lg shadow-2xl p-8 mb-6">
+                            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                                Becoming Virtuous: The Aristotelian Journey
+                            </h1>
+                            <p className="text-xl text-gray-700 mb-6">
+                                An interactive exploration of Aristotle's virtue ethics through experience and practice
+                            </p>
+
+                            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6" role="note">
+                                <h2 className="text-xl font-semibold text-blue-900 mb-2">What You'll Experience</h2>
+                                <ul className="space-y-2 text-gray-700">
+                                    <li>• Understand the five coherence dimensions in Aristotle's ethics</li>
+                                    <li>• Find YOUR mean in real-life situations</li>
+                                    <li>• Experience how virtues develop through habituation over time</li>
+                                    <li>• Practice phronesis (practical wisdom) with complex scenarios</li>
+                                    <li>• Create a personal 30-day virtue development plan</li>
+                                </ul>
+                            </div>
+
+                            <div className="bg-purple-50 border-l-4 border-purple-500 p-6 mb-6" role="note">
+                                <h2 className="text-xl font-semibold text-purple-900 mb-2">Time Investment</h2>
+                                <p className="text-gray-700">
+                                    This module takes 35-40 minutes to complete. You'll generate a personalized report 
+                                    perfect for your Personal Ethics Journal. Your progress is saved automatically.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-2xl p-8">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-4">Student Information</h2>
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                                <div>
+                                    <label htmlFor="student-name" className="block text-sm font-medium text-gray-700 mb-2">
+                                        Full Name <span aria-label="required">*</span>
+                                    </label>
+                                    <input
+                                        id="student-name"
+                                        type="text"
+                                        required
+                                        aria-required="true"
+                                        className="focus-visible w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="student-email" className="block text-sm font-medium text-gray-700 mb-2">
+                                        Email <span aria-label="required">*</span>
+                                    </label>
+                                    <input
+                                        id="student-email"
+                                        type="email"
+                                        required
+                                        aria-required="true"
+                                        className="focus-visible w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="student-course" className="block text-sm font-medium text-gray-700 mb-2">
+                                        Course <span aria-label="required">*</span>
+                                    </label>
+                                    <input
+                                        id="student-course"
+                                        type="text"
+                                        required
+                                        aria-required="true"
+                                        className="focus-visible w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                        value={formData.course}
+                                        onChange={(e) => setFormData({...formData, course: e.target.value})}
+                                    />
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="focus-visible w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                                >
+                                    Begin Your Aristotelian Journey →
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // PHASE 1: Understanding the System
+        function Phase1Understanding({ onNext }) {
+            const [currentStep, setCurrentStep] = useState(0);
+
+            const steps = [
+                {
+                    title: "Aristotle's Big Question",
+                    content: (
+                        <div className="space-y-4">
+                            <p className="text-lg">Aristotle asked: <em>"What does it take for a human life to hold together well across an entire lifetime?"</em></p>
+                            <p>Not just: "What should I do in this moment?" but rather: "What kind of person should I become?"</p>
+                            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                                <p className="font-semibold text-blue-900 mb-2">Eudaimonia (Flourishing)</p>
+                                <p className="text-gray-700">A whole life lived well through excellent activity in accordance with virtue. Not a feeling, but a way of being achieved across a complete life.</p>
+                            </div>
+                            <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                                <p className="font-semibold text-green-900 mb-2">The Function Argument</p>
+                                <p className="text-gray-700">Just as a knife flourishes by cutting well (its function), humans flourish through excellent rational activity (our distinctive function).</p>
+                            </div>
+                        </div>
+                    )
+                },
+                {
+                    title: "Five Coherence Dimensions",
+                    content: (
+                        <div className="space-y-4">
+                            <p className="text-lg">Aristotle understood that virtue requires all five coherence dimensions (from Chapter 1) working together:</p>
+                            <div className="space-y-3">
+                                <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                                    <p className="font-bold text-orange-900">BRC: Biological-Regulatory</p>
+                                    <p className="text-sm text-gray-700">Emotions must be educated through the doctrine of the mean. Too much fear = cowardice. Too little = recklessness. Just right = courage.</p>
+                                </div>
+                                <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                    <p className="font-bold text-blue-900">KIC: Kernel Identity</p>
+                                    <p className="text-sm text-gray-700">Virtue is <em>settled character</em>, not isolated actions. You become courageous by doing courageous acts until courage becomes who you are.</p>
+                                </div>
+                                <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                    <p className="font-bold text-yellow-900">CIC: Cognitive-Informational</p>
+                                    <p className="text-sm text-gray-700">Phronesis (practical wisdom) is cognitive capacity to discern what's right in particular situations. No rigid rules—judgment required.</p>
+                                </div>
+                                <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                    <p className="font-bold text-green-900">ISC: Institutional-Structural</p>
+                                    <p className="text-sm text-gray-700">You need the polis (community). Can't develop virtue alone. Institutions must support, not undermine, ethical development.</p>
+                                </div>
+                                <div className="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                                    <p className="font-bold text-purple-900">TNC: Temporal-Narrative</p>
+                                    <p className="text-sm text-gray-700">"One swallow doesn't make spring." Virtue takes a complete life. Character develops across time through habituation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                },
+                {
+                    title: "Why This Works (When It Does)",
+                    content: (
+                        <div className="space-y-4">
+                            <p className="text-lg">Aristotelian ethics works brilliantly when coherence conditions are met:</p>
+                            <ul className="space-y-2 text-gray-700 list-disc list-inside">
+                                <li>Your emotions are regulated (BRC intact)</li>
+                                <li>Your identity is stable across contexts (KIC intact)</li>
+                                <li>You can think clearly about complex situations (CIC intact)</li>
+                                <li>Institutions support your character development (ISC intact)</li>
+                                <li>You can maintain commitments across time (TNC intact)</li>
+                            </ul>
+                            <div className="bg-red-50 p-6 rounded-lg border-l-4 border-red-500 mt-4">
+                                <p className="font-semibold text-red-900 mb-2">When It Fails</p>
+                                <p className="text-gray-700">When these conditions break down—chronic stress, institutional extraction, identity fragmentation—Aristotelian ethics becomes inaccessible. Not because it's wrong, but because its scope conditions aren't met.</p>
+                            </div>
+                            <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 mt-4">
+                                <p className="font-semibold text-blue-900 mb-2">Your Journey</p>
+                                <p className="text-gray-700">In this module, you'll experience how virtues form, find YOUR mean, practice practical wisdom, and create a personal plan. You'll understand Aristotle not as abstract theory but as lived experience.</p>
+                            </div>
+                        </div>
+                    )
+                }
+            ];
+
+            return (
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 1: Understanding the System</h2>
+
+                    <nav aria-label="Understanding steps" className="flex space-x-2 mb-6">
+                        {steps.map((step, idx) => (
+                            <button
+                                key={idx}
+                                onClick={() => {
+                                    setCurrentStep(idx);
+                                    announce(`Step ${idx + 1}: ${step.title}`);
+                                }}
+                                className={`focus-visible px-4 py-2 rounded-lg font-semibold transition-all ${
+                                    currentStep === idx ? 'bg-blue-600 text-white' : 'bg-gray-200 hover:bg-gray-300'
+                                }`}
+                                aria-label={`Step ${idx + 1}: ${step.title}`}
+                                aria-current={currentStep === idx ? 'step' : undefined}
+                            >
+                                Step {idx + 1}
+                            </button>
+                        ))}
+                    </nav>
+
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-lg p-6 mb-6" role="region" aria-live="polite">
+                        <h3 className="text-2xl font-bold text-blue-900 mb-4">{steps[currentStep].title}</h3>
+                        {steps[currentStep].content}
+                    </div>
+
+                    <div className="flex justify-between">
+                        <button
+                            onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+                            disabled={currentStep === 0}
+                            className={`focus-visible px-6 py-3 rounded-lg font-semibold ${
+                                currentStep === 0 
+                                    ? 'bg-gray-200 text-gray-400 cursor-not-allowed' 
+                                    : 'bg-gray-300 hover:bg-gray-400'
+                            }`}
+                            aria-label="Previous step"
+                        >
+                            ← Previous
+                        </button>
+                        
+                        {currentStep === steps.length - 1 ? (
+                            <button
+                                onClick={onNext}
+                                className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                            >
+                                Continue to Mean Finder →
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => setCurrentStep(currentStep + 1)}
+                                className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                                aria-label="Next step"
+                            >
+                                Next →
+                            </button>
+                        )}
+                    </div>
+                </div>
+            );
+        }
+
+        // PHASE 2: Mean Finder
+        function Phase2MeanFinder({ virtueData, setVirtueData, onNext, onBack }) {
+            const [selectedScenario, setSelectedScenario] = useState('social-media');
+            const [sliderValue, setSliderValue] = useState(50);
+            const [contextVars, setContextVars] = useState({
+                age: 25,
+                workHours: 40,
+                stressLevel: 5
+            });
+
+            const scenarios = {
+                'social-media': {
+                    name: "Social Media Use",
+                    excess: "Constant scrolling, anxiety, comparison, attention fragmentation",
+                    deficiency: "Social disconnection, missing important information, isolation",
+                    mean: "Intentional engagement that serves your purposes without dominating attention",
+                    contextFactors: ["Your social circle's primary communication method", "Your work requirements", "Your vulnerability to comparison anxiety"]
+                },
+                'work-hours': {
+                    name: "Work Hours",
+                    excess: "Burnout, neglected relationships, health deterioration",
+                    deficiency: "Financial insecurity, missed opportunities, underdeveloped skills",
+                    mean: "Sustainable productivity that allows flourishing in other domains",
+                    contextFactors: ["Financial obligations", "Career stage", "Family responsibilities"]
+                },
+                'exercise': {
+                    name: "Exercise",
+                    excess: "Injury risk, exercise addiction, neglecting other life areas",
+                    deficiency: "Health problems, low energy, reduced capacity",
+                    mean: "Regular physical activity that enhances overall functioning",
+                    contextFactors: ["Physical limitations", "Time availability", "Health goals"]
+                }
+            };
+
+            const current = scenarios[selectedScenario];
+
+            const getFeedback = () => {
+                if (sliderValue < 20) return { type: 'deficiency', text: `Too little ${current.name.toLowerCase()}. Result: ${current.deficiency}`, color: 'red' };
+                if (sliderValue < 40) return { type: 'approaching-mean', text: `Getting closer to the mean, but still some ${current.deficiency.toLowerCase()}`, color: 'orange' };
+                if (sliderValue <= 60) return { type: 'mean', text: `The mean for most people: ${current.mean}`, color: 'green' };
+                if (sliderValue <= 80) return { type: 'approaching-excess', text: `Approaching excess. Watch for: ${current.excess.toLowerCase()}`, color: 'orange' };
+                return { type: 'excess', text: `Too much ${current.name.toLowerCase()}. Result: ${current.excess}`, color: 'red' };
+            };
+
+            const feedback = getFeedback();
+
+            const saveFindings = () => {
+                setVirtueData(prev => ({
+                    ...prev,
+                    meanFindings: {
+                        ...prev.meanFindings,
+                        [selectedScenario]: {
+                            value: sliderValue,
+                            context: contextVars,
+                            timestamp: new Date().toISOString()
+                        }
+                    }
+                }));
+                announce(`Saved your mean finding for ${current.name}`);
+            };
+
+            const allScenariosExplored = Object.keys(virtueData.meanFindings).length >= 2;
+
+            return (
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 2: The Mean Finder</h2>
+                    
+                    <p className="text-lg text-gray-700 mb-6">
+                        Aristotle's doctrine of the mean says virtue lies between excess and deficiency. 
+                        But the mean is <strong>relative to you</strong>—it depends on your circumstances, 
+                        vulnerabilities, and purposes. Let's find YOUR mean.
+                    </p>
+
+                    <div className="mb-8">
+                        <label htmlFor="scenario-select" className="block text-lg font-semibold mb-3">
+                            Choose a Scenario:
+                        </label>
+                        <select
+                            id="scenario-select"
+                            value={selectedScenario}
+                            onChange={(e) => {
+                                setSelectedScenario(e.target.value);
+                                setSliderValue(50);
+                                announce(`Selected scenario: ${scenarios[e.target.value].name}`);
+                            }}
+                            className="focus-visible w-full px-4 py-3 border border-gray-300 rounded-lg text-lg"
+                        >
+                            <option value="social-media">Social Media Use</option>
+                            <option value="work-hours">Work Hours</option>
+                            <option value="exercise">Exercise</option>
+                        </select>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-yellow-50 to-green-50 border-2 border-yellow-400 rounded-lg p-6 mb-8">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">{current.name}</h3>
+                        
+                        <div className="mb-6">
+                            <label htmlFor="mean-slider" className="block text-lg font-semibold mb-3">
+                                Adjust the slider to find the mean:
+                            </label>
+                            <input
+                                type="range"
+                                id="mean-slider"
+                                min="0"
+                                max="100"
+                                value={sliderValue}
+                                onChange={(e) => {
+                                    setSliderValue(parseInt(e.target.value));
+                                    announce(`Slider at ${e.target.value} percent`);
+                                }}
+                                className="focus-visible w-full"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow={sliderValue}
+                                aria-label={`Mean slider for ${current.name}`}
+                            />
+                            <div className="flex justify-between text-sm text-gray-600 mt-2">
+                                <span>Deficiency</span>
+                                <span className="font-bold text-lg">{sliderValue}%</span>
+                                <span>Excess</span>
+                            </div>
+                        </div>
+
+                        <div 
+                            className={`p-4 rounded-lg border-l-4 mb-4 ${
+                                feedback.color === 'green' ? 'bg-green-50 border-green-500' :
+                                feedback.color === 'orange' ? 'bg-orange-50 border-orange-500' :
+                                'bg-red-50 border-red-500'
+                            }`}
+                            role="status"
+                            aria-live="polite"
+                        >
+                            <p className="font-semibold text-gray-900">{feedback.text}</p>
+                        </div>
+
+                        <div className="bg-white p-4 rounded-lg mb-4">
+                            <p className="font-semibold text-gray-900 mb-2">Context Matters:</p>
+                            <ul className="text-sm text-gray-700 space-y-1">
+                                {current.contextFactors.map((factor, i) => (
+                                    <li key={i}>• {factor}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <button
+                            onClick={saveFindings}
+                            className="focus-visible w-full px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                            aria-label={`Save your mean finding for ${current.name}`}
+                        >
+                            Save This Finding
+                        </button>
+                    </div>
+
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8" role="note">
+                        <p className="font-semibold text-blue-900 mb-2">Key Insight:</p>
+                        <p className="text-gray-700">
+                            The mean isn't a mathematical midpoint—it's what's appropriate for YOU given your 
+                            circumstances. A professional athlete needs more exercise than a desk worker. Someone 
+                            vulnerable to social media anxiety needs stricter boundaries. This is phronesis (practical wisdom) 
+                            in action.
+                        </p>
+                    </div>
+
+                    {allScenariosExplored && (
+                        <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-6" role="status">
+                            <p className="font-semibold text-green-900">✓ You've explored multiple scenarios!</p>
+                            <p className="text-gray-700 mt-2">Ready to move on to virtue development.</p>
+                        </div>
+                    )}
+
+                    <div className="flex justify-between">
+                        <button
+                            onClick={onBack}
+                            className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                        >
+                            ← Back
+                        </button>
+                        <button
+                            onClick={onNext}
+                            disabled={!allScenariosExplored}
+                            className={`focus-visible px-6 py-3 rounded-lg font-semibold ${
+                                allScenariosExplored
+                                    ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            }`}
+                            aria-disabled={!allScenariosExplored}
+                        >
+                            Continue to Virtue Development →
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // PHASE 3: Virtue Development Simulator
+        function Phase3VirtueDevelopment({ virtueData, setVirtueData, onNext, onBack }) {
+            const [selectedVirtue, setSelectedVirtue] = useState(virtueData.chosenVirtue || null);
+            const [currentDay, setCurrentDay] = useState(0);
+            const [choiceHistory, setChoiceHistory] = useState([]);
+            const [characterStrength, setCharacterStrength] = useState(0);
+            const [showingChoice, setShowingChoice] = useState(false);
+            const [coherenceLevel, setCoherenceLevel] = useState(100);
+
+            const virtue = selectedVirtue ? VIRTUES[selectedVirtue] : null;
+
+            const startSimulation = () => {
+                if (!selectedVirtue) return;
+                setCurrentDay(1);
+                setChoiceHistory([]);
+                setCharacterStrength(0);
+                setShowingChoice(true);
+                setCoherenceLevel(100);
+                setVirtueData(prev => ({ ...prev, chosenVirtue: selectedVirtue }));
+                announce(`Starting 30-day simulation for ${VIRTUES[selectedVirtue].name}`);
+            };
+
+            const makeChoice = (choice) => {
+                const newHistory = [...choiceHistory, { day: currentDay, choice, coherence: coherenceLevel }];
+                setChoiceHistory(newHistory);
+
+                // Update character strength based on choice
+                let strengthChange = 0;
+                if (choice === 'mean') {
+                    strengthChange = coherenceLevel >= 70 ? 5 : 3;
+                } else if (choice === 'excess' || choice === 'deficiency') {
+                    strengthChange = -2;
+                }
+
+                const newStrength = Math.max(0, Math.min(100, characterStrength + strengthChange));
+                setCharacterStrength(newStrength);
+
+                // Randomly adjust coherence for next scenario
+                const coherenceChange = Math.random() * 20 - 10;
+                setCoherenceLevel(Math.max(30, Math.min(100, coherenceLevel + coherenceChange)));
+
+                // Advance day
+                if (currentDay < 30) {
+                    setCurrentDay(currentDay + 1);
+                    setShowingChoice(true);
+                } else {
+                    setShowingChoice(false);
+                    announce('30-day simulation complete');
+                }
+            };
+
+            const skipToEnd = () => {
+                // Fill remaining days with mean choices
+                const remaining = 30 - currentDay;
+                const newHistory = [...choiceHistory];
+                for (let i = 0; i < remaining; i++) {
+                    newHistory.push({ day: currentDay + i + 1, choice: 'mean', coherence: 80 });
+                }
+                setChoiceHistory(newHistory);
+                setCharacterStrength(85);
+                setCurrentDay(30);
+                setShowingChoice(false);
+                announce('Simulation completed');
+            };
+
+            if (!selectedVirtue) {
+                return (
+                    <div className="bg-white rounded-lg shadow-lg p-8">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 3: Virtue Development Simulator</h2>
+                        
+                        <p className="text-lg text-gray-700 mb-6">
+                            Aristotle says virtue comes through habituation—repeated practice until excellence becomes 
+                            natural. You'll experience this by simulating 30 days of virtue development. Choose which 
+                            virtue you want to develop:
+                        </p>
+
+                        <div className="grid md:grid-cols-2 gap-6 mb-8">
+                            {Object.entries(VIRTUES).map(([key, v]) => (
+                                <button
+                                    key={key}
+                                    onClick={() => {
+                                        setSelectedVirtue(key);
+                                        announce(`Selected ${v.name}`);
+                                    }}
+                                    className="focus-visible text-left p-6 border-2 border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all"
+                                    aria-label={`Select ${v.name}`}
+                                >
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{v.name}</h3>
+                                    <p className="text-sm text-gray-600 mb-2">{v.description}</p>
+                                    <div className="text-xs text-gray-500">
+                                        <p><strong>Excess:</strong> {v.excess}</p>
+                                        <p><strong>Deficiency:</strong> {v.deficiency}</p>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="flex justify-between">
+                            <button
+                                onClick={onBack}
+                                className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                            >
+                                ← Back
+                            </button>
+                            <button
+                                onClick={startSimulation}
+                                disabled={!selectedVirtue}
+                                className={`focus-visible px-6 py-3 rounded-lg font-semibold ${
+                                    selectedVirtue
+                                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                }`}
+                            >
+                                Start Simulation →
+                            </button>
+                        </div>
+                    </div>
+                );
+            }
+
+            if (currentDay === 0) {
+                return null; // Should not reach here
+            }
+
+            if (showingChoice && currentDay <= 30) {
+                const scenario = virtue.scenarios[currentDay % virtue.scenarios.length];
+                
+                return (
+                    <div className="bg-white rounded-lg shadow-lg p-8">
+                        <div className="mb-6">
+                            <div className="flex justify-between items-center mb-2">
+                                <h2 className="text-2xl font-bold text-gray-900">
+                                    Day {currentDay} of 30: Developing {virtue.name}
+                                </h2>
+                                <button
+                                    onClick={skipToEnd}
+                                    className="focus-visible text-sm px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                                >
+                                    Skip to Results →
+                                </button>
+                            </div>
+                            <div 
+                                className="bg-gray-200 rounded-full h-2"
+                                role="progressbar"
+                                aria-label="Simulation progress"
+                                aria-valuenow={currentDay}
+                                aria-valuemin="0"
+                                aria-valuemax="30"
+                            >
+                                <div 
+                                    className="bg-blue-600 h-full rounded-full transition-all"
+                                    style={{ width: `${(currentDay / 30) * 100}%` }}
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+                            <p className="font-semibold text-blue-900 mb-2">Current Coherence Level: {Math.round(coherenceLevel)}%</p>
+                            <p className="text-sm text-gray-700">
+                                {coherenceLevel >= 70 ? "You're well-rested, focused, and emotionally stable. Virtuous action feels natural." :
+                                 coherenceLevel >= 40 ? "You're somewhat stressed. Virtuous action requires effort." :
+                                 "You're exhausted and stressed. Virtuous action is very difficult."}
+                            </p>
+                        </div>
+
+                        <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                            <h3 className="text-lg font-bold text-gray-900 mb-3">Situation:</h3>
+                            <p className="text-gray-700">{scenario.situation}</p>
+                        </div>
+
+                        <div className="space-y-4 mb-6">
+                            <button
+                                onClick={() => makeChoice('excess')}
+                                className="focus-visible w-full text-left p-4 border-2 border-red-300 rounded-lg hover:bg-red-50"
+                            >
+                                <p className="font-semibold text-red-900 mb-1">Excess: {virtue.excess}</p>
+                                <p className="text-sm text-gray-700">{scenario.excess}</p>
+                            </button>
+
+                            <button
+                                onClick={() => makeChoice('mean')}
+                                className="focus-visible w-full text-left p-4 border-2 border-green-300 rounded-lg hover:bg-green-50"
+                            >
+                                <p className="font-semibold text-green-900 mb-1">Mean: {virtue.mean}</p>
+                                <p className="text-sm text-gray-700">{scenario.mean}</p>
+                            </button>
+
+                            <button
+                                onClick={() => makeChoice('deficiency')}
+                                className="focus-visible w-full text-left p-4 border-2 border-orange-300 rounded-lg hover:bg-orange-50"
+                            >
+                                <p className="font-semibold text-orange-900 mb-1">Deficiency: {virtue.deficiency}</p>
+                                <p className="text-sm text-gray-700">{scenario.deficiency}</p>
+                            </button>
+                        </div>
+
+                        <div className="bg-purple-50 p-4 rounded-lg">
+                            <p className="font-semibold text-purple-900 mb-2">Character Strength: {Math.round(characterStrength)}%</p>
+                            <div className="bg-purple-200 rounded-full h-3">
+                                <div 
+                                    className="bg-purple-600 h-full rounded-full transition-all"
+                                    style={{ width: `${characterStrength}%` }}
+                                ></div>
+                            </div>
+                            <p className="text-xs text-gray-600 mt-2">
+                                As you consistently choose the mean, {virtue.name.toLowerCase()} becomes more natural and automatic.
+                            </p>
+                        </div>
+                    </div>
+                );
+            }
+
+            // Results screen
+            const meanChoices = choiceHistory.filter(h => h.choice === 'mean').length;
+            const successRate = (meanChoices / 30) * 100;
+
+            return (
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">30-Day Simulation Complete!</h2>
+                    
+                    <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-400 rounded-lg p-6 mb-8">
+                        <h3 className="text-2xl font-bold text-green-900 mb-4">Your Results: {virtue.name}</h3>
+                        <div className="grid md:grid-cols-3 gap-6">
+                            <div className="text-center">
+                                <p className="text-4xl font-bold text-green-600">{meanChoices}</p>
+                                <p className="text-sm text-gray-600">Mean Choices</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-4xl font-bold text-blue-600">{Math.round(successRate)}%</p>
+                                <p className="text-sm text-gray-600">Success Rate</p>
+                            </div>
+                            <div className="text-center">
+                                <p className="text-4xl font-bold text-purple-600">{Math.round(characterStrength)}%</p>
+                                <p className="text-sm text-gray-600">Character Strength</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+                        <p className="font-semibold text-blue-900 mb-2">What You Experienced:</p>
+                        <ul className="space-y-2 text-gray-700">
+                            <li>• <strong>Early days:</strong> Choosing the mean required conscious effort and felt unnatural</li>
+                            <li>• <strong>Middle days:</strong> Patterns started forming, but stress could disrupt them</li>
+                            <li>• <strong>Later days:</strong> {characterStrength >= 70 ? `${virtue.name} became more automatic—your settled character` : "More practice needed for truly settled character"}</li>
+                            <li>• <strong>Coherence impact:</strong> When stressed/exhausted, even practiced virtue was harder</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
+                        <p className="font-semibold text-yellow-900 mb-2">Aristotle's Insight Confirmed:</p>
+                        <p className="text-gray-700">
+                            Virtue isn't just knowing the right thing—it's having the settled disposition to reliably do it. 
+                            This takes time, practice, and appropriate conditions. "One swallow doesn't make spring." 
+                            {successRate >= 70 ? " You're well on your way to settled character!" : " Keep practicing—character development takes time."}
+                        </p>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <button
+                            onClick={() => {
+                                setSelectedVirtue(null);
+                                setCurrentDay(0);
+                                setChoiceHistory([]);
+                                setCharacterStrength(0);
+                            }}
+                            className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                        >
+                            Try Different Virtue
+                        </button>
+                        <button
+                            onClick={onNext}
+                            className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                        >
+                            Continue to Phronesis Practice →
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // PHASE 4: Phronesis Practice
+        function Phase4Phronesis({ virtueData, setVirtueData, onNext, onBack }) {
+            const [currentScenario, setCurrentScenario] = useState(0);
+            const [response, setResponse] = useState('');
+            const [showFeedback, setShowFeedback] = useState(false);
+
+            const scenarios = [
+                {
+                    id: 1,
+                    title: "The Elderly Parent",
+                    situation: "Your elderly parent refuses medical treatment you believe is necessary. They're mentally competent but you strongly disagree with their choice. They say, 'I've lived a good life. I'm ready for what comes.' What do you do?",
+                    complexity: "No clear rule applies. Must balance respect for autonomy, care for parent, your own distress, long-term relationship, and their quality of life.",
+                    goodResponse: "Demonstrates: (1) Recognition of parent's autonomy (2) Exploration of their values and reasoning (3) Honest expression of your concerns (4) Openness to compromise (5) Acceptance that you may not get your way but relationship continues",
+                    poorResponse: "Applies rigid rule ('always respect autonomy' or 'always choose life') without considering context, relationship, or parent's perspective"
+                },
+                {
+                    id: 2,
+                    title: "The Whistleblower Dilemma",
+                    situation: "You discover your company is systematically overcharging vulnerable customers. Reporting it will likely cost you your job and harm coworkers you care about. Your family depends on your income. What do you do?",
+                    complexity: "Multiple stakeholders with competing legitimate needs. No option is clean. Must weigh harm to customers, duty to truth, impact on family, loyalty to coworkers.",
+                    goodResponse: "Demonstrates: (1) Recognition of legitimate competing claims (2) Consideration of scale of harm (3) Exploration of less destructive options (4) Acknowledgment that any choice involves sacrifice (5) Acceptance of moral remainder",
+                    poorResponse: "Oversimplifies to single principle ('always tell truth' or 'always protect family') without grappling with real trade-offs"
+                },
+                {
+                    id: 3,
+                    title: "The Friend's Addiction",
+                    situation: "Your closest friend is developing a serious substance problem. They've asked you not to tell anyone, including their family. You've tried talking to them but they insist they have it under control. What do you do?",
+                    complexity: "Trust vs. care, autonomy vs. protection, short-term relationship damage vs. long-term wellbeing, uncertainty about effectiveness of intervention.",
+                    goodResponse: "Demonstrates: (1) Recognition that both honoring trust and protecting health are real goods (2) Assessment of actual danger level (3) Consideration of what intervention might actually accomplish (4) Willingness to accept relationship cost if necessary (5) Honesty with friend about your position",
+                    poorResponse: "Either 'always honor promises' (ignoring danger) or 'always intervene' (ignoring autonomy and trust) without nuanced assessment"
+                }
+            ];
+
+            const current = scenarios[currentScenario];
+
+            const submitResponse = () => {
+                if (response.length < 50) {
+                    announce('Response too short. Please provide more detail.');
+                    return;
+                }
+                setShowFeedback(true);
+                setVirtueData(prev => ({
+                    ...prev,
+                    phronesisScenarios: [...prev.phronesisScenarios, { scenario: current.id, response, timestamp: new Date().toISOString() }]
+                }));
+                announce('Response submitted. Feedback displayed.');
+            };
+
+            const nextScenario = () => {
+                if (currentScenario < scenarios.length - 1) {
+                    setCurrentScenario(currentScenario + 1);
+                    setResponse('');
+                    setShowFeedback(false);
+                    announce(`Scenario ${currentScenario + 2} of ${scenarios.length}`);
+                }
+            };
+
+            const allScenariosComplete = virtueData.phronesisScenarios.length >= 2;
+
+            return (
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 4: Phronesis Practice Lab</h2>
+                    
+                    <p className="text-lg text-gray-700 mb-6">
+                        Phronesis (practical wisdom) can't be learned from rules. It requires judgment about particular 
+                        situations. Practice by working through these complex scenarios that have no easy answers.
+                    </p>
+
+                    <div className="bg-purple-50 border-l-4 border-purple-500 p-6 mb-8">
+                        <p className="font-semibold text-purple-900 mb-2">Scenario {currentScenario + 1} of {scenarios.length}: {current.title}</p>
+                        <p className="text-gray-700 mt-3">{current.situation}</p>
+                    </div>
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
+                        <p className="font-semibold text-yellow-900 mb-2">Why This Is Complex:</p>
+                        <p className="text-gray-700">{current.complexity}</p>
+                    </div>
+
+                    {!showFeedback ? (
+                        <div className="mb-8">
+                            <label htmlFor="phronesis-response" className="block text-lg font-semibold mb-3">
+                                What would you do? How would you think through this?
+                            </label>
+                            <textarea
+                                id="phronesis-response"
+                                value={response}
+                                onChange={(e) => setResponse(e.target.value)}
+                                className="focus-visible w-full px-4 py-3 border border-gray-300 rounded-lg"
+                                rows="6"
+                                placeholder="Consider: Who's affected? What are the competing goods? What consequences matter? What does the situation call for specifically?"
+                                aria-describedby="response-hint"
+                            />
+                            <p id="response-hint" className="text-sm text-gray-600 mt-2">
+                                {response.length} characters (minimum 50 characters)
+                            </p>
+                            <button
+                                onClick={submitResponse}
+                                disabled={response.length < 50}
+                                className={`focus-visible mt-4 px-6 py-3 rounded-lg font-semibold ${
+                                    response.length >= 50
+                                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                }`}
+                            >
+                                Submit Response
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="space-y-6 mb-8">
+                            <div className="bg-green-50 border-l-4 border-green-500 p-6">
+                                <p className="font-semibold text-green-900 mb-2">Good Phronesis Looks Like:</p>
+                                <p className="text-gray-700">{current.goodResponse}</p>
+                            </div>
+
+                            <div className="bg-red-50 border-l-4 border-red-500 p-6">
+                                <p className="font-semibold text-red-900 mb-2">Poor Phronesis Looks Like:</p>
+                                <p className="text-gray-700">{current.poorResponse}</p>
+                            </div>
+
+                            <div className="bg-blue-50 border-l-4 border-blue-500 p-6">
+                                <p className="font-semibold text-blue-900 mb-2">Your Response:</p>
+                                <p className="text-gray-700">{response}</p>
+                            </div>
+
+                            {currentScenario < scenarios.length - 1 && (
+                                <button
+                                    onClick={nextScenario}
+                                    className="focus-visible w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                                >
+                                    Next Scenario →
+                                </button>
+                            )}
+                        </div>
+                    )}
+
+                    {allScenariosComplete && (
+                        <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
+                            <p className="font-semibold text-green-900 mb-2">✓ Phronesis Practice Complete!</p>
+                            <p className="text-gray-700">You've worked through multiple complex scenarios. This is how practical wisdom develops—through experience, reflection, and judgment about particulars.</p>
+                        </div>
+                    )}
+
+                    <div className="flex justify-between">
+                        <button
+                            onClick={onBack}
+                            className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                        >
+                            ← Back
+                        </button>
+                        <button
+                            onClick={onNext}
+                            disabled={!allScenariosComplete}
+                            className={`focus-visible px-6 py-3 rounded-lg font-semibold ${
+                                allScenariosComplete
+                                    ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                            }`}
+                        >
+                            Continue to Your Plan →
+                        </button>
+                    </div>
+                </div>
+            );
+        }
+
+        // PHASE 5: Personal Virtue Plan
+        function Phase5PersonalPlan({ studentInfo, sessionData, virtueData, phaseProgress, onBack }) {
+            const [showReport, setShowReport] = useState(false);
+
+            const generateReport = () => {
+                const virtue = virtueData.chosenVirtue ? VIRTUES[virtueData.chosenVirtue] : null;
+                const meanScenarios = Object.keys(virtueData.meanFindings);
+                
+                const report = `
+=== ARISTOTELIAN VIRTUE DEVELOPMENT PLAN ===
+
+Student: ${studentInfo.name}
+Email: ${studentInfo.email}
+Course: ${studentInfo.course}
+Session ID: ${sessionData.sessionId}
+Date: ${new Date().toLocaleString()}
+
+---
+
+SUMMARY OF YOUR JOURNEY:
+
+Phase 1: Understanding ✓
+You learned how Aristotle's ethics requires all five coherence dimensions working together (BRC, KIC, CIC, ISC, TNC). Virtue is settled character developed through habituation across time.
+
+Phase 2: Mean Finding ✓
+You explored ${meanScenarios.length} scenarios and discovered that the mean is relative to YOUR circumstances:
+${meanScenarios.map(s => `- ${s}: Found mean at ${virtueData.meanFindings[s].value}%`).join('\n')}
+
+Key Insight: The mean isn't a mathematical midpoint—it's what's appropriate for you given your situation, vulnerabilities, and purposes.
+
+Phase 3: Virtue Development ✓
+${virtue ? `You developed ${virtue.name} over a simulated 30 days. You experienced how:
+- Early: Virtuous action requires conscious effort
+- Middle: Patterns form but stress can disrupt them
+- Later: Virtue becomes more automatic as character settles
+
+Your results: Character strengthened through consistent practice of the mean.` : 'Completed'}
+
+Phase 4: Phronesis Practice ✓
+You worked through ${virtueData.phronesisScenarios.length} complex scenarios requiring practical wisdom. You learned that:
+- No rigid rules work for all situations
+- Context, relationships, and particulars matter
+- Good judgment requires considering multiple legitimate goods
+- Sometimes all options involve moral remainder
+
+---
+
+YOUR 30-DAY VIRTUE DEVELOPMENT PLAN:
+
+${virtue ? `VIRTUE TO DEVELOP: ${virtue.name}
+
+WHAT IT MEANS:
+${virtue.description}
+
+YOUR MEAN:
+${virtue.mean}
+
+DAILY PRACTICES:
+1. Morning: Identify one situation today where you'll need ${virtue.name.toLowerCase()}
+2. During: When the situation arises, pause and ask:
+   - Am I tending toward excess (${virtue.excess.toLowerCase()})?
+   - Am I tending toward deficiency (${virtue.deficiency.toLowerCase()})?
+   - What's the mean for THIS situation?
+3. Evening: Reflect on how you did. Journal about:
+   - Did I hit the mean?
+   - What made it easier or harder?
+   - What will I do differently tomorrow?
+
+WEEKLY REVIEW:
+Every 7 days, assess:
+- Is this becoming more natural?
+- What patterns am I noticing?
+- Do I need to adjust my approach?
+
+INSTITUTIONAL SUPPORT NEEDED:
+- Find one person who can provide feedback and accountability
+- Join or create a community where ${virtue.name.toLowerCase()} is valued
+- Identify institutional barriers that make ${virtue.name.toLowerCase()} harder
+
+COHERENCE PROTECTION:
+Remember: All five dimensions must work together
+- BRC: Protect sleep and stress management—you can't develop virtue while exhausted
+- KIC: Work on being the same person across contexts
+- CIC: Maintain cognitive capacity through focus time
+- ISC: Seek institutions that support rather than undermine virtue
+- TNC: Keep long-term perspective—this is a lifetime project
+
+30-DAY CHECKPOINTS:
+Day 7: Is this virtue becoming slightly more natural?
+Day 14: Can I identify patterns in my practice?
+Day 21: Am I building settled character or just following rules?
+Day 30: How has my relationship to ${virtue.name.toLowerCase()} changed?` : 'Select a virtue to generate complete plan'}
+
+---
+
+FOR YOUR PERSONAL ETHICS JOURNAL:
+
+REFLECTION PROMPTS:
+1. Which coherence dimension is strongest for you right now? Which is weakest? How does this affect your ability to develop virtue?
+
+2. Think about your mean findings. What surprised you? How does understanding that the mean is "relative to you" change how you think about virtue?
+
+3. From your phronesis practice: Describe one situation where practical wisdom (not just following rules) was essential. What made it complex?
+
+4. What institutional support do you currently have for virtue development? What's missing?
+
+5. Looking at your 30-day virtue development simulation: When was virtuous action easiest? When was it hardest? What does this teach you about settled character?
+
+---
+
+ARISTOTLE'S ENDURING INSIGHT:
+
+"We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+
+Virtue isn't about isolated decisions—it's about becoming a certain kind of person through practice over time. This plan gives you the roadmap. Now comes the work of habituation.
+
+Remember: "One swallow doesn't make spring." Be patient with yourself. Character development is a lifetime project.
+
+---
+
+End of Report
+`;
+
+                return report;
+            };
+
+            const downloadReport = () => {
+                const report = generateReport();
+                const blob = new Blob([report], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Aristotle_VirtuePlan_${studentInfo.name.replace(/\s+/g, '_')}.txt`;
+                a.click();
+                URL.revokeObjectURL(url);
+                announce('Virtue development plan downloaded');
+            };
+
+            if (showReport) {
+                return (
+                    <div className="bg-white rounded-lg shadow-lg p-8">
+                        <div className="text-center mb-8">
+                            <div className="text-6xl mb-4" aria-hidden="true">🎓</div>
+                            <h2 className="text-4xl font-bold text-gray-900 mb-4">Aristotelian Journey Complete!</h2>
+                            <p className="text-xl text-gray-700">
+                                You've experienced how virtue develops through habituation, found your mean, 
+                                practiced phronesis, and created a personal development plan.
+                            </p>
+                        </div>
+
+                        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+                            <p className="font-semibold text-blue-900 mb-2">What You've Mastered:</p>
+                            <ul className="space-y-1 text-gray-700">
+                                <li>✓ Five coherence dimensions in Aristotle's ethics</li>
+                                <li>✓ The doctrine of the mean (relative to circumstances)</li>
+                                <li>✓ How virtues form through habituation over time</li>
+                                <li>✓ Phronesis (practical wisdom) for complex situations</li>
+                                <li>✓ Personal 30-day virtue development plan</li>
+                            </ul>
+                        </div>
+
+                        <button
+                            onClick={downloadReport}
+                            className="focus-visible w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 mb-4"
+                        >
+                            📄 Download Your Virtue Development Plan
+                        </button>
+
+                        <button
+                            onClick={onBack}
+                            className="focus-visible w-full bg-gray-300 hover:bg-gray-400 py-3 px-6 rounded-lg font-semibold"
+                        >
+                            ← Review Your Responses
+                        </button>
+                    </div>
+                );
+            }
+
+            const virtue = virtueData.chosenVirtue ? VIRTUES[virtueData.chosenVirtue] : null;
+            const meanCount = Object.keys(virtueData.meanFindings).length;
+            const phronesisCount = virtueData.phronesisScenarios.length;
+
+            return (
+                <div className="bg-white rounded-lg shadow-lg p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 5: Your Personal Virtue Plan</h2>
+                    
+                    <p className="text-lg text-gray-700 mb-6">
+                        Based on your journey through this module, here's a personalized plan for your ongoing 
+                        virtue development. This report is perfect for your Personal Ethics Journal.
+                    </p>
+
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-400 rounded-lg p-6 mb-8">
+                        <h3 className="text-2xl font-bold text-blue-900 mb-4">Your Journey Summary</h3>
+                        <div className="space-y-3">
+                            <div className="flex items-center">
+                                <span className="text-2xl mr-3" aria-hidden="true">✓</span>
+                                <span>Completed understanding of Aristotelian framework</span>
+                            </div>
+                            <div className="flex items-center">
+                                <span className="text-2xl mr-3" aria-hidden="true">{meanCount >= 2 ? '✓' : '○'}</span>
+                                <span>Explored {meanCount} mean-finding scenarios</span>
+                            </div>
+                            <div className="flex items-center">
+                                <span className="text-2xl mr-3" aria-hidden="true">{virtue ? '✓' : '○'}</span>
+                                <span>{virtue ? `Completed 30-day ${virtue.name} simulation` : 'Virtue simulation in progress'}</span>
+                            </div>
+                            <div className="flex items-center">
+                                <span className="text-2xl mr-3" aria-hidden="true">{phronesisCount >= 2 ? '✓' : '○'}</span>
+                                <span>Practiced phronesis through {phronesisCount} complex scenarios</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {virtue && (
+                        <div className="bg-green-50 border-l-4 border-green-500 p-6 mb-8">
+                            <p className="font-semibold text-green-900 mb-2">Your Chosen Virtue: {virtue.name}</p>
+                            <p className="text-gray-700 mb-3">{virtue.description}</p>
+                            <p className="text-sm text-gray-600">
+                                <strong>Mean:</strong> {virtue.mean}<br/>
+                                <strong>Excess to avoid:</strong> {virtue.excess}<br/>
+                                <strong>Deficiency to avoid:</strong> {virtue.deficiency}
+                            </p>
+                        </div>
+                    )}
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
+                        <p className="font-semibold text-yellow-900 mb-2">Key Insights for YOUR Practice:</p>
+                        <ul className="space-y-2 text-gray-700">
+                            <li>• The mean is relative to YOUR circumstances—what works for others may not work for you</li>
+                            <li>• Virtue requires ALL five coherence dimensions—protect your sleep, identity stability, cognitive capacity, institutional support, and temporal continuity</li>
+                            <li>• Character develops through habituation—it takes time and consistent practice</li>
+                            <li>• Phronesis can't be learned from rules—you need experience and judgment</li>
+                            <li>• "One swallow doesn't make spring"—be patient with your development</li>
+                        </ul>
+                    </div>
+
+                    <button
+                        onClick={() => {
+                            setShowReport(true);
+                            announce('Generating completion report');
+                        }}
+                        className="focus-visible w-full px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 mb-4"
+                    >
+                        Generate My Complete Plan →
+                    </button>
+
+                    <button
+                        onClick={onBack}
+                        className="focus-visible w-full px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                    >
+                        ← Back to Review
+                    </button>
+                </div>
+            );
+        }
+
+        // Render
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
