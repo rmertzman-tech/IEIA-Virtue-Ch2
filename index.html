@@ -931,285 +931,347 @@
             );
         }
 
-        // PHASE 3: Virtue Development Simulator
-        function Phase3VirtueDevelopment({ virtueData, setVirtueData, onNext, onBack }) {
-            const [selectedVirtue, setSelectedVirtue] = useState(virtueData.chosenVirtue || null);
-            const [currentDay, setCurrentDay] = useState(0);
-            const [choiceHistory, setChoiceHistory] = useState([]);
-            const [characterStrength, setCharacterStrength] = useState(0);
-            const [showingChoice, setShowingChoice] = useState(false);
-            const [coherenceLevel, setCoherenceLevel] = useState(100);
+        // PHASE 3: Virtue Development Simulator - FIXED VERSION
+function Phase3VirtueDevelopment({ virtueData, setVirtueData, onNext, onBack }) {
+    const [selectedVirtue, setSelectedVirtue] = useState(virtueData.chosenVirtue || null);
+    const [simulationStarted, setSimulationStarted] = useState(false);
+    const [currentDay, setCurrentDay] = useState(1);
+    const [choiceHistory, setChoiceHistory] = useState([]);
+    const [characterStrength, setCharacterStrength] = useState(0);
+    const [showingChoice, setShowingChoice] = useState(false);
+    const [coherenceLevel, setCoherenceLevel] = useState(100);
+    const [simulationComplete, setSimulationComplete] = useState(false);
 
-            const virtue = selectedVirtue ? VIRTUES[selectedVirtue] : null;
+    const virtue = selectedVirtue ? VIRTUES[selectedVirtue] : null;
 
-            const startSimulation = () => {
-                if (!selectedVirtue) return;
-                setCurrentDay(1);
-                setChoiceHistory([]);
-                setCharacterStrength(0);
-                setShowingChoice(true);
-                setCoherenceLevel(100);
-                setVirtueData(prev => ({ ...prev, chosenVirtue: selectedVirtue }));
-                announce(`Starting 30-day simulation for ${VIRTUES[selectedVirtue].name}`);
-            };
+    const startSimulation = () => {
+        if (!selectedVirtue) return;
+        setSimulationStarted(true);
+        setCurrentDay(1);
+        setChoiceHistory([]);
+        setCharacterStrength(0);
+        setShowingChoice(true);
+        setCoherenceLevel(100);
+        setSimulationComplete(false);
+        setVirtueData(prev => ({ ...prev, chosenVirtue: selectedVirtue }));
+        announce(`Starting 30-day simulation for ${VIRTUES[selectedVirtue].name}`);
+    };
 
-            const makeChoice = (choice) => {
-                const newHistory = [...choiceHistory, { day: currentDay, choice, coherence: coherenceLevel }];
-                setChoiceHistory(newHistory);
+    const makeChoice = (choice) => {
+        const newHistory = [...choiceHistory, { day: currentDay, choice, coherence: coherenceLevel }];
+        setChoiceHistory(newHistory);
 
-                // Update character strength based on choice
-                let strengthChange = 0;
-                if (choice === 'mean') {
-                    strengthChange = coherenceLevel >= 70 ? 5 : 3;
-                } else if (choice === 'excess' || choice === 'deficiency') {
-                    strengthChange = -2;
-                }
+        // Update character strength based on choice
+        let strengthChange = 0;
+        if (choice === 'mean') {
+            strengthChange = coherenceLevel >= 70 ? 5 : 3;
+        } else if (choice === 'excess' || choice === 'deficiency') {
+            strengthChange = -2;
+        }
 
-                const newStrength = Math.max(0, Math.min(100, characterStrength + strengthChange));
-                setCharacterStrength(newStrength);
+        const newStrength = Math.max(0, Math.min(100, characterStrength + strengthChange));
+        setCharacterStrength(newStrength);
 
-                // Randomly adjust coherence for next scenario
-                const coherenceChange = Math.random() * 20 - 10;
-                setCoherenceLevel(Math.max(30, Math.min(100, coherenceLevel + coherenceChange)));
+        // Randomly adjust coherence for next scenario
+        const coherenceChange = Math.random() * 20 - 10;
+        setCoherenceLevel(Math.max(30, Math.min(100, coherenceLevel + coherenceChange)));
 
-                // Advance day
-                if (currentDay < 30) {
-                    setCurrentDay(currentDay + 1);
-                    setShowingChoice(true);
-                } else {
-                    setShowingChoice(false);
-                    announce('30-day simulation complete');
-                }
-            };
+        // Advance day
+        if (currentDay < 30) {
+            setCurrentDay(currentDay + 1);
+            setShowingChoice(true);
+        } else {
+            setSimulationComplete(true);
+            setShowingChoice(false);
+            announce('30-day simulation complete');
+        }
+    };
 
-            const skipToEnd = () => {
-                // Fill remaining days with mean choices
-                const remaining = 30 - currentDay;
-                const newHistory = [...choiceHistory];
-                for (let i = 0; i < remaining; i++) {
-                    newHistory.push({ day: currentDay + i + 1, choice: 'mean', coherence: 80 });
-                }
-                setChoiceHistory(newHistory);
-                setCharacterStrength(85);
-                setCurrentDay(30);
-                setShowingChoice(false);
-                announce('Simulation completed');
-            };
+    const skipToEnd = () => {
+        // Fill remaining days with mean choices
+        const remaining = 30 - currentDay;
+        const newHistory = [...choiceHistory];
+        for (let i = 0; i < remaining; i++) {
+            newHistory.push({ day: currentDay + i + 1, choice: 'mean', coherence: 80 });
+        }
+        setChoiceHistory(newHistory);
+        setCharacterStrength(85);
+        setCurrentDay(30);
+        setSimulationComplete(true);
+        setShowingChoice(false);
+        announce('Simulation completed');
+    };
 
-            if (!selectedVirtue) {
-                return (
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 3: Virtue Development Simulator</h2>
-                        
-                        <p className="text-lg text-gray-700 mb-6">
-                            Aristotle says virtue comes through habituation—repeated practice until excellence becomes 
-                            natural. You'll experience this by simulating 30 days of virtue development. Choose which 
-                            virtue you want to develop:
-                        </p>
+    const resetSimulation = () => {
+        setSelectedVirtue(null);
+        setSimulationStarted(false);
+        setCurrentDay(1);
+        setChoiceHistory([]);
+        setCharacterStrength(0);
+        setShowingChoice(false);
+        setCoherenceLevel(100);
+        setSimulationComplete(false);
+    };
 
-                        <div className="grid md:grid-cols-2 gap-6 mb-8">
-                            {Object.entries(VIRTUES).map(([key, v]) => (
-                                <button
-                                    key={key}
-                                    onClick={() => {
-                                        setSelectedVirtue(key);
-                                        announce(`Selected ${v.name}`);
-                                    }}
-                                    className="focus-visible text-left p-6 border-2 border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all"
-                                    aria-label={`Select ${v.name}`}
-                                >
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2">{v.name}</h3>
-                                    <p className="text-sm text-gray-600 mb-2">{v.description}</p>
-                                    <div className="text-xs text-gray-500">
-                                        <p><strong>Excess:</strong> {v.excess}</p>
-                                        <p><strong>Deficiency:</strong> {v.deficiency}</p>
-                                    </div>
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="flex justify-between">
-                            <button
-                                onClick={onBack}
-                                className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
-                            >
-                                ← Back
-                            </button>
-                            <button
-                                onClick={startSimulation}
-                                disabled={!selectedVirtue}
-                                className={`focus-visible px-6 py-3 rounded-lg font-semibold ${
-                                    selectedVirtue
-                                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                }`}
-                            >
-                                Start Simulation →
-                            </button>
-                        </div>
-                    </div>
-                );
-            }
-
-            if (currentDay === 0) {
-                return null; // Should not reach here
-            }
-
-            if (showingChoice && currentDay <= 30) {
-                const scenario = virtue.scenarios[currentDay % virtue.scenarios.length];
+    // SCREEN 1: Virtue Selection
+    if (!selectedVirtue) {
+        return (
+            <div className="bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Phase 3: Virtue Development Simulator</h2>
                 
-                return (
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <div className="mb-6">
-                            <div className="flex justify-between items-center mb-2">
-                                <h2 className="text-2xl font-bold text-gray-900">
-                                    Day {currentDay} of 30: Developing {virtue.name}
-                                </h2>
-                                <button
-                                    onClick={skipToEnd}
-                                    className="focus-visible text-sm px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
-                                >
-                                    Skip to Results →
-                                </button>
-                            </div>
-                            <div 
-                                className="bg-gray-200 rounded-full h-2"
-                                role="progressbar"
-                                aria-label="Simulation progress"
-                                aria-valuenow={currentDay}
-                                aria-valuemin="0"
-                                aria-valuemax="30"
-                            >
-                                <div 
-                                    className="bg-blue-600 h-full rounded-full transition-all"
-                                    style={{ width: `${(currentDay / 30) * 100}%` }}
-                                ></div>
-                            </div>
-                        </div>
+                <p className="text-lg text-gray-700 mb-6">
+                    Aristotle says virtue comes through habituation—repeated practice until excellence becomes 
+                    natural. You'll experience this by simulating 30 days of virtue development. Choose which 
+                    virtue you want to develop:
+                </p>
 
-                        <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
-                            <p className="font-semibold text-blue-900 mb-2">Current Coherence Level: {Math.round(coherenceLevel)}%</p>
-                            <p className="text-sm text-gray-700">
-                                {coherenceLevel >= 70 ? "You're well-rested, focused, and emotionally stable. Virtuous action feels natural." :
-                                 coherenceLevel >= 40 ? "You're somewhat stressed. Virtuous action requires effort." :
-                                 "You're exhausted and stressed. Virtuous action is very difficult."}
-                            </p>
-                        </div>
-
-                        <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                            <h3 className="text-lg font-bold text-gray-900 mb-3">Situation:</h3>
-                            <p className="text-gray-700">{scenario.situation}</p>
-                        </div>
-
-                        <div className="space-y-4 mb-6">
-                            <button
-                                onClick={() => makeChoice('excess')}
-                                className="focus-visible w-full text-left p-4 border-2 border-red-300 rounded-lg hover:bg-red-50"
-                            >
-                                <p className="font-semibold text-red-900 mb-1">Excess: {virtue.excess}</p>
-                                <p className="text-sm text-gray-700">{scenario.excess}</p>
-                            </button>
-
-                            <button
-                                onClick={() => makeChoice('mean')}
-                                className="focus-visible w-full text-left p-4 border-2 border-green-300 rounded-lg hover:bg-green-50"
-                            >
-                                <p className="font-semibold text-green-900 mb-1">Mean: {virtue.mean}</p>
-                                <p className="text-sm text-gray-700">{scenario.mean}</p>
-                            </button>
-
-                            <button
-                                onClick={() => makeChoice('deficiency')}
-                                className="focus-visible w-full text-left p-4 border-2 border-orange-300 rounded-lg hover:bg-orange-50"
-                            >
-                                <p className="font-semibold text-orange-900 mb-1">Deficiency: {virtue.deficiency}</p>
-                                <p className="text-sm text-gray-700">{scenario.deficiency}</p>
-                            </button>
-                        </div>
-
-                        <div className="bg-purple-50 p-4 rounded-lg">
-                            <p className="font-semibold text-purple-900 mb-2">Character Strength: {Math.round(characterStrength)}%</p>
-                            <div className="bg-purple-200 rounded-full h-3">
-                                <div 
-                                    className="bg-purple-600 h-full rounded-full transition-all"
-                                    style={{ width: `${characterStrength}%` }}
-                                ></div>
-                            </div>
-                            <p className="text-xs text-gray-600 mt-2">
-                                As you consistently choose the mean, {virtue.name.toLowerCase()} becomes more natural and automatic.
-                            </p>
-                        </div>
-                    </div>
-                );
-            }
-
-            // Results screen
-            const meanChoices = choiceHistory.filter(h => h.choice === 'mean').length;
-            const successRate = (meanChoices / 30) * 100;
-
-            return (
-                <div className="bg-white rounded-lg shadow-lg p-8">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6">30-Day Simulation Complete!</h2>
-                    
-                    <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-400 rounded-lg p-6 mb-8">
-                        <h3 className="text-2xl font-bold text-green-900 mb-4">Your Results: {virtue.name}</h3>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-green-600">{meanChoices}</p>
-                                <p className="text-sm text-gray-600">Mean Choices</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-blue-600">{Math.round(successRate)}%</p>
-                                <p className="text-sm text-gray-600">Success Rate</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-4xl font-bold text-purple-600">{Math.round(characterStrength)}%</p>
-                                <p className="text-sm text-gray-600">Character Strength</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
-                        <p className="font-semibold text-blue-900 mb-2">What You Experienced:</p>
-                        <ul className="space-y-2 text-gray-700">
-                            <li>• <strong>Early days:</strong> Choosing the mean required conscious effort and felt unnatural</li>
-                            <li>• <strong>Middle days:</strong> Patterns started forming, but stress could disrupt them</li>
-                            <li>• <strong>Later days:</strong> {characterStrength >= 70 ? `${virtue.name} became more automatic—your settled character` : "More practice needed for truly settled character"}</li>
-                            <li>• <strong>Coherence impact:</strong> When stressed/exhausted, even practiced virtue was harder</li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
-                        <p className="font-semibold text-yellow-900 mb-2">Aristotle's Insight Confirmed:</p>
-                        <p className="text-gray-700">
-                            Virtue isn't just knowing the right thing—it's having the settled disposition to reliably do it. 
-                            This takes time, practice, and appropriate conditions. "One swallow doesn't make spring." 
-                            {successRate >= 70 ? " You're well on your way to settled character!" : " Keep practicing—character development takes time."}
-                        </p>
-                    </div>
-
-                    <div className="flex justify-between">
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    {Object.entries(VIRTUES).map(([key, v]) => (
                         <button
+                            key={key}
                             onClick={() => {
-                                setSelectedVirtue(null);
-                                setCurrentDay(0);
-                                setChoiceHistory([]);
-                                setCharacterStrength(0);
+                                setSelectedVirtue(key);
+                                announce(`Selected ${v.name}`);
                             }}
-                            className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                            className="focus-visible text-left p-6 border-2 border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50 transition-all"
+                            aria-label={`Select ${v.name}`}
                         >
-                            Try Different Virtue
+                            <h3 className="text-xl font-bold text-gray-900 mb-2">{v.name}</h3>
+                            <p className="text-sm text-gray-600 mb-2">{v.description}</p>
+                            <div className="text-xs text-gray-500">
+                                <p><strong>Excess:</strong> {v.excess}</p>
+                                <p><strong>Deficiency:</strong> {v.deficiency}</p>
+                            </div>
                         </button>
-                        <button
-                            onClick={onNext}
-                            className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
-                        >
-                            Continue to Phronesis Practice →
-                        </button>
+                    ))}
+                </div>
+
+                <div className="flex justify-between">
+                    <button
+                        onClick={onBack}
+                        className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                    >
+                        ← Back
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    // SCREEN 2: Confirm and Start
+    if (!simulationStarted) {
+        return (
+            <div className="bg-white rounded-lg shadow-lg p-8">
+                <button
+                    onClick={() => setSelectedVirtue(null)}
+                    className="focus-visible mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                    aria-label="Choose different virtue"
+                >
+                    ← Choose Different Virtue
+                </button>
+
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Develop {virtue.name}?</h2>
+
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-400 rounded-lg p-6 mb-6">
+                    <h3 className="text-2xl font-bold text-blue-900 mb-4">{virtue.name}</h3>
+                    <p className="text-lg text-gray-700 mb-4">{virtue.description}</p>
+                    
+                    <div className="grid md:grid-cols-3 gap-4 mb-4">
+                        <div className="bg-red-100 p-4 rounded-lg">
+                            <p className="font-bold text-red-900 text-sm mb-1">EXCESS</p>
+                            <p className="text-red-800">{virtue.excess}</p>
+                        </div>
+                        <div className="bg-green-100 p-4 rounded-lg">
+                            <p className="font-bold text-green-900 text-sm mb-1">MEAN (VIRTUE)</p>
+                            <p className="text-green-800">{virtue.mean}</p>
+                        </div>
+                        <div className="bg-orange-100 p-4 rounded-lg">
+                            <p className="font-bold text-orange-900 text-sm mb-1">DEFICIENCY</p>
+                            <p className="text-orange-800">{virtue.deficiency}</p>
+                        </div>
                     </div>
                 </div>
-            );
-        }
+
+                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
+                    <p className="font-semibold text-yellow-900 mb-2">What You'll Experience:</p>
+                    <ul className="space-y-2 text-gray-700">
+                        <li>• 30 days of scenarios requiring {virtue.name.toLowerCase()}</li>
+                        <li>• Early days: Choosing the mean requires conscious effort</li>
+                        <li>• Middle days: Patterns form but stress can disrupt them</li>
+                        <li>• Later days: Virtue becomes more automatic as character settles</li>
+                        <li>• Your coherence level (stress, energy) will vary—affecting difficulty</li>
+                    </ul>
+                </div>
+
+                <div className="flex justify-between">
+                    <button
+                        onClick={() => setSelectedVirtue(null)}
+                        className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                    >
+                        ← Choose Different Virtue
+                    </button>
+                    <button
+                        onClick={startSimulation}
+                        className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                    >
+                        Start 30-Day Simulation →
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    // SCREEN 3: Daily Choices (in progress)
+    if (showingChoice && !simulationComplete) {
+        const scenario = virtue.scenarios[currentDay % virtue.scenarios.length];
+        
+        return (
+            <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="mb-6">
+                    <div className="flex justify-between items-center mb-2">
+                        <h2 className="text-2xl font-bold text-gray-900">
+                            Day {currentDay} of 30: Developing {virtue.name}
+                        </h2>
+                        <button
+                            onClick={skipToEnd}
+                            className="focus-visible text-sm px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                        >
+                            Skip to Results →
+                        </button>
+                    </div>
+                    <div 
+                        className="bg-gray-200 rounded-full h-2"
+                        role="progressbar"
+                        aria-label="Simulation progress"
+                        aria-valuenow={currentDay}
+                        aria-valuemin="0"
+                        aria-valuemax="30"
+                    >
+                        <div 
+                            className="bg-blue-600 h-full rounded-full transition-all"
+                            style={{ width: `${(currentDay / 30) * 100}%` }}
+                        ></div>
+                    </div>
+                </div>
+
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-6">
+                    <p className="font-semibold text-blue-900 mb-2">Current Coherence Level: {Math.round(coherenceLevel)}%</p>
+                    <p className="text-sm text-gray-700">
+                        {coherenceLevel >= 70 ? "You're well-rested, focused, and emotionally stable. Virtuous action feels natural." :
+                         coherenceLevel >= 40 ? "You're somewhat stressed. Virtuous action requires effort." :
+                         "You're exhausted and stressed. Virtuous action is very difficult."}
+                    </p>
+                </div>
+
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">Situation:</h3>
+                    <p className="text-gray-700">{scenario.situation}</p>
+                </div>
+
+                <div className="space-y-4 mb-6">
+                    <button
+                        onClick={() => makeChoice('excess')}
+                        className="focus-visible w-full text-left p-4 border-2 border-red-300 rounded-lg hover:bg-red-50"
+                    >
+                        <p className="font-semibold text-red-900 mb-1">Excess: {virtue.excess}</p>
+                        <p className="text-sm text-gray-700">{scenario.excess}</p>
+                    </button>
+
+                    <button
+                        onClick={() => makeChoice('mean')}
+                        className="focus-visible w-full text-left p-4 border-2 border-green-300 rounded-lg hover:bg-green-50"
+                    >
+                        <p className="font-semibold text-green-900 mb-1">Mean: {virtue.mean}</p>
+                        <p className="text-sm text-gray-700">{scenario.mean}</p>
+                    </button>
+
+                    <button
+                        onClick={() => makeChoice('deficiency')}
+                        className="focus-visible w-full text-left p-4 border-2 border-orange-300 rounded-lg hover:bg-orange-50"
+                    >
+                        <p className="font-semibold text-orange-900 mb-1">Deficiency: {virtue.deficiency}</p>
+                        <p className="text-sm text-gray-700">{scenario.deficiency}</p>
+                    </button>
+                </div>
+
+                <div className="bg-purple-50 p-4 rounded-lg">
+                    <p className="font-semibold text-purple-900 mb-2">Character Strength: {Math.round(characterStrength)}%</p>
+                    <div className="bg-purple-200 rounded-full h-3">
+                        <div 
+                            className="bg-purple-600 h-full rounded-full transition-all"
+                            style={{ width: `${characterStrength}%` }}
+                        ></div>
+                    </div>
+                    <p className="text-xs text-gray-600 mt-2">
+                        As you consistently choose the mean, {virtue.name.toLowerCase()} becomes more natural and automatic.
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
+    // SCREEN 4: Results
+    const meanChoices = choiceHistory.filter(h => h.choice === 'mean').length;
+    const successRate = (meanChoices / 30) * 100;
+
+    return (
+        <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">30-Day Simulation Complete!</h2>
+            
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-400 rounded-lg p-6 mb-8">
+                <h3 className="text-2xl font-bold text-green-900 mb-4">Your Results: {virtue.name}</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                        <p className="text-4xl font-bold text-green-600">{meanChoices}</p>
+                        <p className="text-sm text-gray-600">Mean Choices</p>
+                    </div>
+                    <div className="text-center">
+                        <p className="text-4xl font-bold text-blue-600">{Math.round(successRate)}%</p>
+                        <p className="text-sm text-gray-600">Success Rate</p>
+                    </div>
+                    <div className="text-center">
+                        <p className="text-4xl font-bold text-purple-600">{Math.round(characterStrength)}%</p>
+                        <p className="text-sm text-gray-600">Character Strength</p>
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+                <p className="font-semibold text-blue-900 mb-2">What You Experienced:</p>
+                <ul className="space-y-2 text-gray-700">
+                    <li>• <strong>Early days:</strong> Choosing the mean required conscious effort and felt unnatural</li>
+                    <li>• <strong>Middle days:</strong> Patterns started forming, but stress could disrupt them</li>
+                    <li>• <strong>Later days:</strong> {characterStrength >= 70 ? `${virtue.name} became more automatic—your settled character` : "More practice needed for truly settled character"}</li>
+                    <li>• <strong>Coherence impact:</strong> When stressed/exhausted, even practiced virtue was harder</li>
+                </ul>
+            </div>
+
+            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-8">
+                <p className="font-semibold text-yellow-900 mb-2">Aristotle's Insight Confirmed:</p>
+                <p className="text-gray-700">
+                    Virtue isn't just knowing the right thing—it's having the settled disposition to reliably do it. 
+                    This takes time, practice, and appropriate conditions. "One swallow doesn't make spring." 
+                    {successRate >= 70 ? " You're well on your way to settled character!" : " Keep practicing—character development takes time."}
+                </p>
+            </div>
+
+            <div className="flex justify-between">
+                <button
+                    onClick={resetSimulation}
+                    className="focus-visible px-6 py-3 bg-gray-300 hover:bg-gray-400 rounded-lg font-semibold"
+                >
+                    Try Different Virtue
+                </button>
+                <button
+                    onClick={onNext}
+                    className="focus-visible px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700"
+                >
+                    Continue to Phronesis Practice →
+                </button>
+            </div>
+        </div>
+    );
+}
 
         // PHASE 4: Phronesis Practice
         function Phase4Phronesis({ virtueData, setVirtueData, onNext, onBack }) {
